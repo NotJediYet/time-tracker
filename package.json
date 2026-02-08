@@ -1,0 +1,65 @@
+{
+  "name": "time-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts --env-file .env",
+    "start": "node ./dist/index.js --env-file .env",
+    "build": "tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "imports": {
+    "#*": "./src/*"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.1.0",
+    "@vitest/coverage-v8": "^4.0.18",
+    "@vitest/eslint-plugin": "^1.6.6",
+    "eslint": "^9.39.2",
+    "eslint-plugin-perfectionist": "^5.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.8.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.0.18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotJediYet/time-tracker.git"
+  },
+  "keywords": [],
+  "author": "Daniel Kushch",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/NotJediYet/time-tracker/issues"
+  },
+  "homepage": "https://github.com/NotJediYet/time-tracker#readme",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.{json,yml,yaml,md}": [
+      "prettier --check"
+    ]
+  }
+}
